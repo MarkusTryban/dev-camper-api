@@ -2,9 +2,9 @@
   "name": "dev-camper-api",
   "version": "1.0.0",
   "description": "Backend API for DevCamper application",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production node server",
+    "start": "set NODE_ENV=production && node server",
     "dev": "nodemon server"
   },
   "repository": {
