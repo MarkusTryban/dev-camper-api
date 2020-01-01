@@ -1,7 +1,3 @@
-const express = require('express');
-
-const router = express.Router();
-
 // @desc      Get all bootcamps
 // @route     GET /api/v1/bootcamps
 // @access    Public
@@ -42,5 +38,3 @@ exports.deleteBootcamp = (req, res, next) => {
     .status(200)
     .json({ success: true, msg: `Delete bootcamp ${req.params.id}` });
 };
-
-module.exports = router;
