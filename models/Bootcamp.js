@@ -31,5 +31,26 @@ const BootcampSchema = new mongoose.Schema({
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       'Please add a valid email'
     ]
+  },
+  address: {
+    type: String,
+    required: [true, 'Please add an address']
+  },
+  location: {
+    // GeoJSON Point
+    type: {
+      type: String,
+      enum: ['Point']
+    },
+    coordinates: {
+      type: [Number],
+      index: '2dsphere'
+    },
+    formattedAddress: String,
+    street: String,
+    city: String,
+    state: String,
+    zipcode: String,
+    country: String
   }
 });
