@@ -79,5 +79,13 @@ const BootcampSchema = new mongoose.Schema({
   housing: {
     type: Boolean,
     default: false
+  },
+  jobAssistance: {
+    type: Boolean,
+    default: false
+  },
+  jobGuarantee: {
+    type: Boolean,
+    default: false
   }
 });
