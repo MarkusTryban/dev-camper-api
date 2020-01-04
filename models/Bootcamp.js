@@ -52,5 +52,18 @@ const BootcampSchema = new mongoose.Schema({
     state: String,
     zipcode: String,
     country: String
+  },
+  careers: {
+    // Array of strings
+    type: [String],
+    required: true,
+    enum: [
+      'Web Development',
+      'Mobile Development',
+      'UI/UX',
+      'Data Science',
+      'Business',
+      'Other'
+    ]
   }
 });
