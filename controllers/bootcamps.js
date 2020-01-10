@@ -10,7 +10,7 @@ exports.getBootcamps = async (req, res, next) => {
 
     res
       .status(200)
-      .json({ success: true, count: bootcamps.length, dat: bootcamps });
+      .json({ success: true, count: bootcamps.length, data: bootcamps });
   } catch (err) {
     res.status(400).json({ success: false });
   }
