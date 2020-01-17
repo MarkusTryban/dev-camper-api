@@ -16,3 +16,8 @@ mongoose.connect(process.env.MONGO_URI, {
   useFindAndModify: false,
   useUnifiedTopology: true
 });
+
+// Read JSON files
+const bootcamps = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/bootcamps.json`, 'utf-8')
+);
