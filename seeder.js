@@ -33,3 +33,15 @@ const importData = async () => {
     console.log(err);
   }
 };
+
+// Delete data in DB
+const deleteData = async () => {
+  try {
+    await Bootcamp.deleteMany();
+
+    console.log('Data Destroyed...'.red.inverse);
+    process.exit();
+  } catch (err) {
+    console.log(err);
+  }
+};
