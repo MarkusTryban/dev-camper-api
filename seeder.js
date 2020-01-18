@@ -45,3 +45,10 @@ const deleteData = async () => {
     console.log(err);
   }
 };
+
+// Import or delete data from DB when calling node seeder
+if (process.argv[2] === '-import') {
+  importData();
+} else if (process.argv[2] === '-delete') {
+  deleteData();
+}
