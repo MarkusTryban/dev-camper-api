@@ -11,6 +11,10 @@ exports.getBootcamps = asyncHandler(async (req, res) => {
 
   const reqQuery = { ...req.query };
 
+  const removeFields = ['select'];
+
+  removeFields.forEach(param => delete reqQuery[param]);
+
   let queryStr = JSON.stringify(reqQuery);
 
   queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
