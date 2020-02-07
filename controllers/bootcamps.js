@@ -88,7 +88,7 @@ exports.getBootcamp = asyncHandler(async (req, res, next) => {
 // @desc        Create new bootcamp
 // @route       POST /api/v1/bootcamp
 // @access      Private
-exports.createBootcamp = asyncHandler(async (req, res, next) => {
+exports.createBootcamp = asyncHandler(async (req, res) => {
   const bootcamp = await Bootcamp.create(req.body);
 
   res.status(201).json({
@@ -135,7 +135,7 @@ exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
 // @desc        Get bootcamps within a radius
 // @route       GET /api/v1/bootcamps/radius/:zipcode/:distance
 // @access      Private
-exports.getBootcampsInRadius = asyncHandler(async (req, res, next) => {
+exports.getBootcampsInRadius = asyncHandler(async (req, res) => {
   const { zipcode, distance } = req.params;
 
   // Get lat & long from geocoder
