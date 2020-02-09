@@ -56,4 +56,8 @@ CourseSchema.statics.getAverageCost = async function(bootcampId) {
   console.log(obj);
 };
 
+CourseSchema.post('save', function() {
+  this.constructor.getAverageCost(this.bootcamp);
+});
+
 module.exports = mongoose.model('Course', CourseSchema);
