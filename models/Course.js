@@ -48,7 +48,7 @@ CourseSchema.statics.getAverageCost = async function(bootcampId) {
     {
       $group: {
         _id: '$bootcamp',
-        averageCost: { $avg: 'tuition' }
+        averageCost: { $avg: '$tuition' }
       }
     }
   ]);
