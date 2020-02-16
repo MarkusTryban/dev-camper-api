@@ -180,4 +180,13 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
   if (!file.mimetype.startsWith('image')) {
     return next(new ErrorResponse(`Please upload an image file type`, 400));
   }
+
+  if (file.size > process.env.MAX_FILE_UPLOAD) {
+    return next(
+      new ErrorResponse(
+        `Please upload an image file less than ${process.env.MAX_FILE_UPLOAD}`,
+        400
+      )
+    );
+  }
 });
