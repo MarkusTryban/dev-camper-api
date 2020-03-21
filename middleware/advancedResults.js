@@ -53,6 +53,15 @@ const advancedResults = (model, populate) => async (req, res, next) => {
       limit
     };
   }
+
+  res.advancedResults = {
+    success: true,
+    count: results.length,
+    pagination,
+    data: results
+  };
+
+  next();
 };
 
 module.exports = advancedResults;
